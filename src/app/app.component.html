@@ -1,6 +1,14 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
+
+      <div class="form-group">
+        <label for="productname">lowercase</label>
+        <input
+        appToLowercase
+        type="text" id="productname" class="form-control"
+        >
+      </div>
       <p basiccss>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
         impedit sed eum aperiam quasi mollitia sequi aliquam illum, voluptatem
@@ -38,7 +46,25 @@
         impedit sed eum aperiam quasi mollitia sequi aliquam illum, voluptatem
         sint.
       </p>
+<!-- event -->
 
+       <p appRendrercssHigh6
+       [defaultcolor]="'yellowgreen'"
+       [hovercolor]="'hotpink'"
+       >
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iste illum ducimus asperiores cupiditate saepe vitae commodi possimus reiciendis molestias voluptatem, nisi temporibus ad odio.
+      </p>
+
+       <p appRendrercssHigh6
+       [defaultcolor]="'orangered'"
+       [hovercolor]="'pink'"
+       >
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iste illum ducimus asperiores cupiditate saepe vitae commodi possimus reiciendis molestias voluptatem, nisi temporibus ad odio.
+      </p>
+
+       <p appRendrercssHigh6>
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi iste illum ducimus asperiores cupiditate saepe vitae commodi possimus reiciendis molestias voluptatem, nisi temporibus ad odio.
+      </p>
     </div>
   </div>
 </div>

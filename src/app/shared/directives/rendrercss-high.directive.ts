@@ -1,4 +1,12 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[appRendrercssHigh]',
@@ -96,5 +104,46 @@ export class RendrercssHighDirective5 implements OnInit {
     );
     this._rendrer.setStyle(this._eleRef.nativeElement, 'color', 'black');
     this._rendrer.setStyle(this._eleRef.nativeElement, 'padding', '20px');
+  }
+}
+
+// event binding :-
+
+@Directive({
+  selector: '[appRendrercssHigh6]',
+})
+export class RendrercssHighDirective6 implements OnInit {
+
+
+  @Input()   defaultcolor:string='blueviolet'
+  @Input()  hovercolor:string='orange'
+
+  @HostBinding('style.background-color')
+  bgColor=this.defaultcolor
+  constructor(private _rendrer: Renderer2, private _eleRef: ElementRef) {}
+  ngOnInit(): void {
+    // this._rendrer.setStyle(
+    //   this._eleRef.nativeElement,
+    //   'background-color',
+    //   'pink'
+    // );
+    this.bgColor=this.defaultcolor
+    this._rendrer.setStyle(this._eleRef.nativeElement, 'color', 'black');
+    this._rendrer.setStyle(this._eleRef.nativeElement, 'padding', '10px');
+  }
+
+  @HostListener('mouseover')
+  onmouseover(){
+    // this._rendrer.setStyle(this._eleRef.nativeElement,"background-color","blueviolet")
+// this.bgColor='blueviolet'
+this.bgColor=this.hovercolor
+  }
+
+  @HostListener('mouseout')
+  mouseout(){
+    // this._rendrer.setStyle(this._eleRef.nativeElement,"background-color","pink")
+// this.bgColor='pink'
+this.bgColor=this.defaultcolor
+
   }
 }
